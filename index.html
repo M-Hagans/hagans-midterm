@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- This is the viewport tag (WHAT IT IS). 
+       It makes the site fit the screen (WHAT IT DOES). 
+       It stops the page from looking tiny on phones (WHAT IT MEANS). -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcus Hagans — Web Developer</title>
+
+  <!-- Google Fonts (WHAT IT IS). 
+       Loads professional fonts (WHAT IT DOES). 
+       It makes the site fonts look better (WHAT IT MEANS). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap">
+
+  <!-- Link to CSS (WHAT IT IS). 
+       Connects the HTML to hagans-midterm.css file (WHAT IT DOES). 
+       It keeps the design separate from the HTML (WHAT IT MEANS). -->
+  <link rel="stylesheet" href="css/hagans-midterm.css">
+</head>
+<body id="top">
+
+  <!-- Sticky Header (WHAT IT IS). 
+       It holds the name and nav links (WHAT IT DOES). 
+       It stays at the top while you scroll (WHAT IT MEANS). -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#top" class="brand">Marcus Hagans</a>
+
+      <!-- Menu button for mobile (WHAT IT IS). 
+           Opens the nav drawer (WHAT IT DOES). 
+           This tells readers if it's open (WHAT IT MEANS). -->
+      <button type="button" class="menu-toggle"
+              aria-expanded="false" aria-controls="primary-nav"
+              aria-label="Open menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+
+      <nav id="primary-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section (WHAT IT IS). 
+         Displays the name and role (WHAT IT DOES). 
+         It's the first thing a visitor sees (WHAT IT MEANS). -->
+    <section class="hero">
+      <h1>Marcus Hagans</h1>
+      <p class="tagline">Junior Web Developer based in Lynchburg, VA</p>
+      <a href="#projects" class="btn-primary">View my work</a>
+    </section>
+
+    <!-- About Section (WHAT IT IS). 
+         A two-column layout with a bio and image (WHAT IT DOES). 
+         Introduces you to the user (WHAT IT MEANS). -->
+    <section id="about" class="about">
+      <div class="about-text">
+        <h2>About me</h2>
+        <p>
+          I am a beginner web developer who likes building clean and responsive websites.
+          I enjoy being creative and making webpages that look good and are easy for people to use.
+        </p>
+        <p>
+          My goal is to build products that are not only functional 
+          but also visually engaging that people can enjoy. 
+        </p>
+      </div>
+      <!-- AI-assisted asset (WHAT IT IS). 
+           A stylized image illustration (WHAT IT DOES). 
+           This adds visual to the bio (WHAT IT MEANS). -->
+      <img src="img/about.jpg" alt="Stylized digital workspace" class="about-img">
+    </section>
+
+    <!-- Skills Section (WHAT IT IS). 
+         A responsive grid of skill cards (WHAT IT DOES). 
+         It quickly lists technical abilities (WHAT IT MEANS). -->
+    <section id="skills">
+      <div class="container">
+        <h2>My Skills</h2>
+        <ul class="skills-grid">
+          <li class="skill-card">
+            <span class="icon">🌐</span>
+            <h3>HTML5</h3>
+            <p>Structure and accessibility.</p>
+          </li>
+          <li class="skill-card">
+            <span class="icon">🎨</span>
+            <h3>CSS3</h3>
+            <p>Flexbox, Grid, and fluid typography.</p>
+          </li>
+          <li class="skill-card">
+            <span class="icon">📜</span>
+            <h3>JavaScript</h3>
+            <p>Interactivity .</p>
+          </li>
+          <li class="skill-card">
+            <span class="icon">📐</span>
+            <h3>Figma</h3>
+            <p>UI/UX design and prototyping.</p>
+          </li>
+          <li class="skill-card">
+            <span class="icon">🚀</span>
+            <h3>GitHub</h3>
+            <p>Control and collaboration.</p>
+          </li>
+          <li class="skill-card">
+            <span class="icon">♿</span>
+            <h3>WCAG AA</h3>
+            <p>Building the best web experiences.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects Section (WHAT IT IS). 
+         A grid of work examples (WHAT IT DOES). 
+         It shows skills with pictures and media (WHAT IT MEANS). -->
+    <section id="projects">
+      <div class="container">
+        <h2>Selected projects</h2>
+        <div class="projects-grid">
+          <article class="project-card">
+            <img src="img/typography.jpg" alt="Fluid Typography Specimen screenshot">
+            <div class="project-info">
+              <h3>Typography</h3>
+              <p> Project demonstrating responsive text with CSS clamp().</p>
+              <a href="#" class="project-link">View Project</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="img/photo_gallery.jpg" alt="Responsive Photo Gallery screenshot">
+            <div class="project-info">
+              <h3>Photo Gallery</h3>
+              <p>A dynamic image gallery built using CSS Flexbox.</p>
+              <a href="#" class="project-link">View Project</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="img/vector_art.jpg" alt="SVG Scene screenshot">
+            <div class="project-info">
+              <h3>SVG Vector Art</h3>
+              <p>An illustration created entirely with SVG code.</p>
+              <a href="#" class="project-link">View Project</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (WHAT IT IS). 
+       Contact info and disclosures (WHAT IT DOES). 
+       It provides a way to reach out (WHAT IT MEANS). -->
+  <footer id="contact" class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Marcus Hagans · 
+        <a href="mailto:mdh2963@email.vccs.edu">mdh2963@email.vccs.edu</a>
+      </p>
+      <div class="social-links">
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <p class="ai-disclosure">
+        AI Disclosure: I used AI tools to help with this project.
+        The images were made with Bing Image Creator (DALL·E), and AI helped me create icons for SVG also Chat GPTcode for the Script.
+        This website contains help from the W3C website (https://www.w3.org/).
+        I have reviewed, tested, and added all AI-generated disclamers to the website. I have also made sure that all content is original and not plagiarized.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav Script (WHAT IT IS). 
+       Controls the open/close state of the menu (WHAT IT DOES). 
+       It makes the site usable on phones (WHAT IT MEANS). -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const primaryNav = document.getElementById('primary-nav');
+
+    menuToggle.addEventListener('click', () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      primaryNav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
