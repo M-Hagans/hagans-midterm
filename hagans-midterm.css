@@ -1,0 +1,369 @@
+/* =====================================================================
+   Color palette
+   bg:       #fafbfc   (background light gray)
+   surface:  #ffffff   (header white)
+   text:     #1f2933   (Primary text dark gray)
+   primary:  #0b3d91   (Buttons deep blue)
+   accent:   #f0c419   (Accents golden yellow)
+   ===================================================================== */
+
+*, *::before, *::after { 
+  box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #1f2933;
+  background-color: #fafbfc;
+  line-height: 1.6;
+}
+
+/* Hierarchy (WHAT IT IS).
+   Uses clamp for fluid sizes (WHAT IT DOES).
+   This shows text is functional on phone and proportional on desktop (WHAT IT MEANS). */
+h1, h2 { 
+  font-family: "Playfair Display", Georgia, serif; 
+  line-height: 1.1; 
+  margin: 0;
+}
+
+h1 { 
+  font-size: clamp(2.5rem, 6vw, 4rem); 
+}
+
+h2 { 
+  font-size: clamp(1.5rem, 3vw, 2.25rem); 
+  color: #0b3d91; 
+}
+
+h3 { 
+  font-size: clamp(1.2rem, 2vw, 1.5rem); 
+}
+
+p { 
+  font-size: clamp(1rem, 1.2vw, 1.125rem); 
+  max-width: 65ch; 
+}
+
+img { 
+  max-width: 100%; 
+  height: auto; 
+  display: block; 
+}
+
+/* Primary Button (WHAT IT IS).
+   Styles the main call to action (WHAT IT DOES).
+   It draws attention to the most important action (WHAT IT MEANS). */
+.btn-primary {
+  display: inline-block;
+  background-color: #0b3d91;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #082d6b;
+}
+
+/* ---- HEADER (Flexbox) (WHAT IT IS).
+   Handles the sticky top navigation (WHAT IT DOES).
+   It keeps the menu accessible regardless of scroll position (WHAT IT MEANS). ---- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;
+}
+
+.brand {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #1f2933;
+}
+
+#primary-nav {
+  display: flex;
+  gap: 24px;
+}
+
+#primary-nav a {
+  text-decoration: none;
+  color: #1f2933;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+#primary-nav a:hover {
+  color: #0b3d91;
+}
+
+/* ---- HERO (Flexbox) (WHAT IT IS).
+   Large intro section (WHAT IT DOES).
+   It sets the visual tone of the portfolio (WHAT IT MEANS). ---- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 70vh;
+  padding: 40px 24px;
+}
+
+.hero h1 {
+  margin-bottom: 1rem;
+}
+
+.tagline {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+/* ---- ABOUT (Grid 2-column) (WHAT IT IS).
+   Layout for bio and image (WHAT IT DOES).
+   This balances the text and visuals for better user engagement (WHAT IT MEANS). ---- */
+.about {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  align-items: center;
+}
+
+.about-text h2 {
+  margin-bottom: 1.5rem;
+}
+
+.about-img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 10px 22px rgba(0,0,0,.06);
+}
+
+@media (min-width: 768px) { 
+  .about { 
+    grid-template-columns: 2fr 1fr; 
+  } 
+}
+
+/* ---- SKILLS (auto-fit Grid) (WHAT IT IS).
+   A grid of skill cards (WHAT IT DOES).
+   Allows  quick scan of technicality (WHAT IT MEANS). ---- */
+#skills {
+  background-color: #f0f4f8;
+  padding: 80px 24px;
+}
+
+#skills .container {
+  text-align: center;
+}
+
+#skills h2 {
+  margin-bottom: 40px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.skill-card {
+  background: #ffffff;
+  padding: 32px 24px;
+  border-radius: 14px;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 10px 22px rgba(0,0,0,.06);
+}
+
+.skill-card .icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.skill-card h3 {
+  margin-bottom: 8px;
+  color: #0b3d91;
+}
+
+.skill-card p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ---- PROJECTS (auto-fit Grid) (WHAT IT IS).
+   Gallery of work examples (WHAT IT DOES).
+   This shows proof of the designer's abilities (WHAT IT MEANS). ---- */
+#projects {
+  padding: 80px 24px;
+}
+
+#projects h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 20px;
+}
+
+.project-info h3 {
+  margin-bottom: 8px;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #0b3d91;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ---- FOOTER (Flexbox) (WHAT IT IS).
+   Closing section with contact and legal (WHAT IT DOES).
+   It provides a final point of contact and academic disclosure (WHAT IT MEANS). ---- */
+.site-footer {
+  background: #1f2933;
+  color: #ffffff;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.site-footer a {
+  color: #f0c419;
+  text-decoration: none;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.ai-disclosure {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 20px;
+}
+
+/* ---- ACCESSIBILITY ---- */
+
+/* Visible focus (WHAT IT IS).
+   Adds a high-contrast ring around focused items (WHAT IT DOES).
+   It helps users see where they are on the page (WHAT IT MEANS). */
+:focus-visible {
+  outline: 3px solid #f0c419;
+  outline-offset: 3px;
+}
+
+/* ---- MOBILE NAV (WHAT IT IS).
+   The hamburger menu for small screens (WHAT IT DOES).
+   Saves space on phones while keeping navigation available (WHAT IT MEANS). ---- */
+.menu-toggle { 
+  display: none; 
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1100;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #1f2933;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+@media (max-width: 767px) {
+  .menu-toggle { display: inline-flex; flex-direction: column; }
+  
+  #primary-nav {
+    position: fixed; 
+    top: 0; 
+    right: 0; 
+    bottom: 0;
+    width: 300px; 
+    max-width: 85vw;
+    background: #ffffff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 24px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  body.menu-open #primary-nav { 
+    transform: translateX(0); 
+  }
+
+  #primary-nav a {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+}
+
+/* ---- REDUCED MOTION (WHAT IT IS).
+   Disables animations for users with motion sensitivity (WHAT IT DOES).
+   It prevents dizziness and nausea for users (WHAT IT MEANS). ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
